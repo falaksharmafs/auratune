@@ -2,10 +2,6 @@
 
 ## 🚀 Live
 
-## 🚀 Live Demo
-
-## 🚀 Live Demo
-
 👉 **[Open AuraTune Live](https://auratune-e9snhddkbr88wpx6udmsc.streamlit.app/)**
 
 Real-time, explainable EQ personalization. A perception layer reads the
