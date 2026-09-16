@@ -4,7 +4,9 @@
 
 ## 🚀 Live Demo
 
-👉 **[Open AuraTune on Streamlit](https://auratune-e9snhddkbr88wpx6udmsc.streamlit.app/)**
+## 🚀 Live Demo
+
+👉 **[Open AuraTune Live](https://auratune-e9snhddkbr88wpx6udmsc.streamlit.app/)**
 
 Real-time, explainable EQ personalization. A perception layer reads the
 room (ambient noise) and the content (podcast / music / movie), a 3-agent
