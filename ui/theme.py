@@ -13,7 +13,7 @@ LIGHT: dict = {
     "border_strong": "#D4D1C9",
     "ink":           "#16171A",
     "ink_soft":      "#54565C",
-    "muted":         "#8C8F96",
+    "muted":         "#6B6E75",
     "accent":        "#0B7C8C",
     "accent_soft":   "#E3F4F6",
     "accent_ink":    "#065561",
@@ -99,7 +99,19 @@ h1,h2,h3,h4{color:var(--at-ink)!important;letter-spacing:-0.021em;}
 h1{font-weight:700!important;font-size:var(--at-fs-h1)!important;}
 h2{font-weight:600!important;font-size:var(--at-fs-h2)!important;}
 h3{font-weight:600!important;font-size:var(--at-fs-h3)!important;}
-p,span,label,li,.stMarkdown{color:var(--at-ink-soft);font-size:var(--at-fs-body);}
+p, .stMarkdown, .stMarkdown p,
+label, li {
+  color: var(--at-ink-soft);
+  font-size: var(--at-fs-body);
+}
+
+[data-baseweb="select"] *,
+[data-baseweb="input"] *,
+[data-baseweb="popover"] *,
+[data-testid="stWidgetLabel"] *,
+[data-testid="stSelectbox"] * {
+  color: var(--at-ink) !important;
+}
 [data-testid="stCaptionContainer"],[data-testid="stCaptionContainer"] *{
   color:var(--at-muted)!important;font-size:var(--at-fs-small)!important;}
 
