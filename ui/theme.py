@@ -99,19 +99,7 @@ h1,h2,h3,h4{color:var(--at-ink)!important;letter-spacing:-0.021em;}
 h1{font-weight:700!important;font-size:var(--at-fs-h1)!important;}
 h2{font-weight:600!important;font-size:var(--at-fs-h2)!important;}
 h3{font-weight:600!important;font-size:var(--at-fs-h3)!important;}
-p, .stMarkdown, .stMarkdown p,
-label, li {
-  color: var(--at-ink-soft);
-  font-size: var(--at-fs-body);
-}
-
-[data-baseweb="select"] *,
-[data-baseweb="input"] *,
-[data-baseweb="popover"] *,
-[data-testid="stWidgetLabel"] *,
-[data-testid="stSelectbox"] * {
-  color: var(--at-ink) !important;
-}
+p,span,label,li,.stMarkdown{color:var(--at-ink-soft);font-size:var(--at-fs-body);}
 [data-testid="stCaptionContainer"],[data-testid="stCaptionContainer"] *{
   color:var(--at-muted)!important;font-size:var(--at-fs-small)!important;}
 
