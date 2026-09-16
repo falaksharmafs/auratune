@@ -1,8 +1,10 @@
 # AuraTune — Adaptive Audio Personalization Engine
 
-## 🚀 Live
+## 🚀 Live Demo
 
-👉 **[Open AuraTune Live](https://auratune-e9snhddkbr88wpx6udmsc.streamlit.app/)**
+[![Open AuraTune](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://auratune-e9snhdhdkrb88pwx6udmsc.streamlit.app/)
+
+**[Open AuraTune Live →](https://auratune-e9snhdhdkrb88pwx6udmsc.streamlit.app/)**
 
 Real-time, explainable EQ personalization. A perception layer reads the
 room (ambient noise) and the content (podcast / music / movie), a 3-agent
