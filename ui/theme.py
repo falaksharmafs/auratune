@@ -13,7 +13,7 @@ LIGHT: dict = {
     "border_strong": "#D4D1C9",
     "ink":           "#16171A",
     "ink_soft":      "#54565C",
-    "muted":         "#6B6E75",
+    "muted":         "#5C6069",
     "accent":        "#0B7C8C",
     "accent_soft":   "#E3F4F6",
     "accent_ink":    "#065561",
