@@ -1,0 +1,23 @@
+@"
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+.env
+.streamlit/secrets.toml
+
+*.log
+
+# Generated/local audio and outputs
+test_audio/
+separated/
+outputs/
+
+# Large ML model files
+*.pt
+*.pth
+*.ckpt
+"@ | Set-Content .gitignore
+data/profiles.local.json
