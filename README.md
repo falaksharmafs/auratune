@@ -1,12 +1,14 @@
 # AuraTune — Adaptive Audio Personalization Engine
 
-**Live app:** [auratune-eq.streamlit.app](https://auratune-eq.streamlit.app)
+## 🚀 Live
+
+[![Open AuraTune](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://auratune-e9snhddkbr88wpx6udmsc.streamlit.app)
 
 Real-time, explainable EQ personalization. A perception layer reads the
 room (ambient noise) and the content (podcast / music / movie), a 3-agent
 LangGraph pipeline turns that plus your stored hearing profile into a
 target EQ curve, and a plain-English sentence tells you why it changed.
-It also reads a photo of *your actual EQ app* and tells you the exact
+It also reads a photo of _your actual EQ app_ and tells you the exact
 slider values to set.
 
 Built to match the architecture in `Grp_186__PPT.pptx`:
@@ -96,6 +98,7 @@ pip install -r requirements.txt
 ```
 
 Everything runs with **zero external services** out of the box:
+
 - No `ANTHROPIC_API_KEY`? The EQ Decision agent uses keyword-rule command
   parsing, and the Explainer agent uses a templated sentence, instead of
   calling Claude.
@@ -186,9 +189,9 @@ features): **[`ml/README.md`](ml/README.md)**.
 
 ## Local ML ambient-noise-type classifier
 
-A second, independent local ML component: instead of just *how loud* the
+A second, independent local ML component: instead of just _how loud_ the
 room is (the always-on RMS-based quiet/moderate/noisy read), a model
-classifies *what kind* of ambient noise is present -- one of 6 buckets
+classifies _what kind_ of ambient noise is present -- one of 6 buckets
 (calm nature, domestic ambient, human activity, mechanical drone, impulsive
 transient, traffic/urban) -- and refines the EQ curve on top of the
 loudness-based adjustment. Trained on **2,000 real labeled clips** from the
@@ -197,11 +200,11 @@ setup as the genre classifier -- Logistic Regression baseline, a **bagging**
 Random Forest, and a **boosting** `HistGradientBoostingClassifier` -- and
 the best one is picked automatically:
 
-| Model | Type | Test accuracy | Test F1 (macro) |
-|---|---|---|---|
-| Logistic Regression | linear baseline | ~48% | ~0.42 |
-| Random Forest | bagging ensemble | ~63% | ~0.61 |
-| HistGradientBoostingClassifier | boosting ensemble | **~64%** | ~0.62 |
+| Model                          | Type              | Test accuracy | Test F1 (macro) |
+| ------------------------------ | ----------------- | ------------- | --------------- |
+| Logistic Regression            | linear baseline   | ~48%          | ~0.42           |
+| Random Forest                  | bagging ensemble  | ~63%          | ~0.61           |
+| HistGradientBoostingClassifier | boosting ensemble | **~64%**      | ~0.62           |
 
 (Random baseline for 6 balanced-ish classes is ~17%; see
 `ml/models/noise_metrics.json` after training for the exact run.) Unlike
@@ -253,11 +256,11 @@ Outputs to `validation/output/`: one PNG per scenario (before/after curve)
 plus `report.md` with the detected context, numeric deltas, and the
 Explainer agent's sentence for each.
 
-| Scenario | Expected behavior | Verified |
-|---|---|---|
-| Quiet room + podcast | Minimal compensation; curve near stored podcast target | ✅ "No change needed" |
-| Noisy environment + music | Vocal/presence boost, bass pulled back to avoid noise stacking | ✅ +3.5 dB presence, −2.5 dB bass |
-| Home + movie | Stored movie target curve, isolating content-type switching | ✅ correctly switches curve on content type |
+| Scenario                  | Expected behavior                                              | Verified                                    |
+| ------------------------- | -------------------------------------------------------------- | ------------------------------------------- |
+| Quiet room + podcast      | Minimal compensation; curve near stored podcast target         | ✅ "No change needed"                       |
+| Noisy environment + music | Vocal/presence boost, bass pulled back to avoid noise stacking | ✅ +3.5 dB presence, −2.5 dB bass           |
+| Home + movie              | Stored movie target curve, isolating content-type switching    | ✅ correctly switches curve on content type |
 
 ## Run unit tests
 
@@ -283,7 +286,7 @@ against **graceful, documented fallbacks**, not stubbed out:
   capture / media playback, for the simulated scenarios. Real mic capture
   is also implemented for real (`perception/live_capture.py`, via
   `sounddevice`) and wired into the dashboard's **🎙️ Real-time (10s mic
-  capture)** mode — content audio (what's *playing*) still isn't captured,
+  capture)** mode — content audio (what's _playing_) still isn't captured,
   since that needs OS-level loopback/virtual-cable setup that's
   platform-specific; ambient room audio is captured for real.
 - **Content-type classification**: the noise-level detector is fully
@@ -306,7 +309,7 @@ against **graceful, documented fallbacks**, not stubbed out:
   approximation, clearly documented in `perception/genre_classifier.py`,
   is that the model's input features come from Spotify's own private
   audio-analysis pipeline, so at inference time this project computes
-  signal-derived *proxies* for them from the actual audio via `librosa`
+  signal-derived _proxies_ for them from the actual audio via `librosa`
   (11 of 13 are genuinely estimated from the signal; 2 -- liveness and
   time signature -- aren't reliably estimable from a short buffer and are
   pinned to typical values rather than guessed). Same "real feature,
