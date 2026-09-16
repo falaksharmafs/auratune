@@ -121,11 +121,20 @@ div[data-testid="stVerticalBlockBorderWrapper"]:hover{
 
 /* eyebrow */
 .at-eyebrow{
-  font-size:var(--at-fs-micro);font-weight:600;letter-spacing:.09em;
-  text-transform:uppercase;color:var(--at-muted);
-  display:flex;align-items:center;gap:.5rem;margin-bottom:.65rem;
+  font-size:var(--at-fs-micro);
+  font-weight:600;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  color:var(--at-ink)!important;
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  margin-bottom:.65rem;
 }
-.at-eyebrow::after{content:"";flex:1;height:1px;background:var(--at-border);}
+
+.at-eyebrow *{
+  color:var(--at-ink)!important;
+}
 
 /* hero */
 .at-hero{padding:.4rem 0 1.5rem;}
